@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>AllPosts</title>
+</head>
+<body>
+<center>
+#{extends 'main.html' /}
+#{set title:'Post List' /}
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="jumbotron">
+                            <h2>
+                                所有文章
+                            </h2>
+                            </br>
+                        *{######}*
+
+                       <h3>
+                       #{list items:posts, as:'post'}
+                           <p class="post">
+
+                           <div class ="see_comment">
+                                  <a href="@{controllers.Blog.seecomment(post.id)}" name="post.id"  >${post.title}</a>
+                           </div>
+
+
+                       #{/list}
+
+
+                       </h3>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <p>
+        <button type="button" class="btn btn-success btn-lg">
+            <a style="color: ghostwhite" style = "text-shadow: black 5px 3px 3px;" href="@{form()}">
+                写新文章
+            </a>
+        </button>
+    </p>
+
+    <p>
+
+        <button type="button" class="btn btn-success btn-lg">
+            <a style="color: ghostwhite" style = "text-shadow: black 5px 3px 3px;" href=@{Secure.logout()}>
+                退出登录
+            *{${session.get("username")}}*
+            </a>
+        </button>
+    </p>
+</center>
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- jQuery (Bootstrap 插件需要引入) -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- 包含了所有编译插件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

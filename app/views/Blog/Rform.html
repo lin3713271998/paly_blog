@@ -1,0 +1,102 @@
+#{form @savecomment()}
+<!doctype html>
+<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+</head>
+<body>
+<center>
+
+    #{extends 'main.html' /}
+
+
+
+
+
+    #{ifErrors}
+        <p class="error">
+            Please correct these errors.
+        </p>
+    #{/ifErrors}
+
+#{field 'postid'}
+
+    <div style="padding: 10px 500px 10px;">
+        <Rform class="bs-example bs-example-Rform" role="Rform">
+            <div class="input-group">
+                <input type="text"  name="${field.name}"
+                       value="${comment?.postid}" class="Rform-control" style="color: darkslategray" placeholder="输入postid">
+                <span class="error">#{error 'post.title' /}</span>
+            </div>
+        </Rform>
+    </div>
+#{/field}
+
+    #{field 'anthor'}
+
+
+
+        <div style="padding: 10px 500px 10px;">
+            <Rform class="bs-example bs-example-Rform" role="Rform">
+                <div class="input-group">
+                *{<span class="input-group-addon"style="color: #5e5e5e">Post title:</span>}*
+                    <input type="text"  name="${field.name}"
+                           value="${comment?.anthor}" class="Rform-control" style="color: darkslategray" placeholder="输入姓名">
+                    <span class="error">#{error 'post.title' /}</span>
+                </div>
+            </Rform>
+        </div>
+
+    #{/field}
+    </p>
+
+
+    #{field 'content'}
+
+        <div class="panel panel-primary"style="height: 120px;width: 400px">
+
+            <div>
+                <textarea name="${field.name}" placeholder= "输入内容"class="Rform-group"style="color: #333333;background-color: #c7ddef"style = "text-shadow: black 5px 3px 3px;" rows="2" cols="40">${comment?.content}</textarea>
+            </div>
+        </div>
+        <span class="error">#{error 'comment.content' /}</span>
+    #{/field}
+
+
+
+
+
+*{<input type="submit" value="Publish this post to the blog" />}*
+    <button type="submit" class="btn btn-primary btn-lg active style="color: ghostwhite" style = "text-shadow: black 5px 3px 3px;">
+        提交
+    </button>
+    <p>
+
+
+    </p>
+
+
+
+</center>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<!-- jQuery (Bootstrap 插件需要引入) -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- 包含了所有编译插件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+#{/form}

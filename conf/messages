@@ -1,0 +1,12 @@
+email = 电子邮件
+password = 登陆密码
+fullname = 全名
+isAdmin = 管理员
+Users = 用户
+Posts = 博客
+Comments = 评论
+title = 标题
+postdate = 发布日期
+format = 格式
+content = 内容
+anthor = 作者

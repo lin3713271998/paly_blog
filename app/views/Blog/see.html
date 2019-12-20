@@ -1,0 +1,85 @@
+<html lang="en">
+<head></head>
+<body>
+#{extends 'main.html' /}
+#{form @savecomment()}
+<!-- Required meta tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+<center>
+
+
+    <h3>本篇文章ID：${post.id}</h3>
+    <h1 style="color: #d58512"> 《${post.title}》</h1>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <ul class="jumbotron">
+
+                    <h5> ${post.content} </h5>
+
+
+                </ul>
+            </div>
+
+
+            <p class="text-left"> <mark>
+            <p class="font-italic">
+            点击删除评论:
+        #{list items:post.comments, as:'comment'}
+            <p class="comment">
+
+            <div class ="see_comment">
+
+                   <a href="@{Blog.deletecomment(post.id,comment.id)}" name="comment.id"  >
+            <p>
+            <p>
+        ${comment.anthor}:${comment.content};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </p>
+
+        </a>
+            </div>
+
+
+        #{/list}
+
+            </p>
+            </mark></p>
+
+
+
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <p>
+        <button type="button" class="btn btn-success btn-lg">
+            <a style="color: ghostwhite" style = "text-shadow: black 5px 3px 3px;" href="@{controllers.Blog.Rform()}">
+                添加新评论
+            </a>
+        </button>
+    </p>
+
+
+</center>
+#{/form}
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!-- jQuery (Bootstrap 插件需要引入) -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- 包含了所有编译插件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
